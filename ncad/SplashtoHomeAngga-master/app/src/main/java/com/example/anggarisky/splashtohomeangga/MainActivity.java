@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnin = (Button) findViewById(R.id.btnIncribir);
         this.btncon = (Button) findViewById(R.id.btnConsultar);
 
+        spm.setVisibility(View.INVISIBLE);
         btnin.setVisibility(View.INVISIBLE);
         tvv2.setVisibility(View.INVISIBLE);
 
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Animation frombotton;
                     frombotton = AnimationUtils.loadAnimation(MainActivity.this, R.anim.frombottom);
+                    spm.setVisibility(View.VISIBLE);
                     btnin.setVisibility(View.VISIBLE);
                     btnca.setVisibility(View.VISIBLE);
                     btncon.setVisibility(View.VISIBLE);
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             StrictMode.setThreadPolicy(new Builder().permitAll().build());
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.81;databaseName=natacad;user=SA;password=4973160vvVV");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();

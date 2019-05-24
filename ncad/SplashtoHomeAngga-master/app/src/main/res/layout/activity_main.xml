@@ -336,17 +336,20 @@
 
     <Spinner
         android:id="@+id/spmenu"
-        android:layout_width="153dp"
-        android:layout_height="31dp"
+        android:layout_width="103dp"
+        android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/bginput2"
+        android:popupBackground="@drawable/rouded"
+        android:popupElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintVertical_bias="0.682" />
 
 
 </android.support.constraint.ConstraintLayout>
