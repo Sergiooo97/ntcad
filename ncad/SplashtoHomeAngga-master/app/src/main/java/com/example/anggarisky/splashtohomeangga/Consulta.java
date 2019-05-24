@@ -42,6 +42,7 @@ public class Consulta extends AppCompatActivity {
 
 
        }
+       /*
         if(selec.equals("1")){
             recycleviewalumnos1 = (RecyclerView) findViewById(R.id.Recycleruno);
             recycleviewalumnos1.setLayoutManager(new LinearLayoutManager((this)));
@@ -95,7 +96,7 @@ public class Consulta extends AppCompatActivity {
 
 
 
-        }
+        }*/
     }
     public Connection conexionBD()
     {
@@ -118,7 +119,7 @@ public class Consulta extends AppCompatActivity {
             Statement st=conexionBD().createStatement();
             ResultSet rs=st.executeQuery("select * from natacadT ORDER BY Grado, Edad ASC");
             while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"),rs.getString("Apellidos"),  R.drawable.estudiante));
 
             }
 
@@ -129,7 +130,7 @@ public class Consulta extends AppCompatActivity {
         }
         return alumno;
     }
-
+/*
     public List<Primergrado> obtenerBD2(){
         List<Primergrado> alumno = new ArrayList<>();
         try{
@@ -231,5 +232,5 @@ public class Consulta extends AppCompatActivity {
 
         }
         return alumno;
-    }
+    }*/
 }

@@ -1,17 +1,18 @@
 package com.example.anggarisky.splashtohomeangga;
 
 public class Primergrado {
-    private String nombre1, edad1, grado1;
+    private String nombre1, edad1, grado1, apellido1;
     private int imageEst;
 
     public Primergrado() {
     }
 
-    public Primergrado(String nombre1, String edad1, String grado1, int imageEst) {
+    public Primergrado(String nombre1, String edad1, String grado1, String apellido1, int imageEst) {
         this.nombre1 = nombre1;
         this.edad1 = edad1;
         this.grado1 = grado1;
         this.imageEst = imageEst;
+        this.apellido1 = apellido1;
     }
 
     public String getNombre1() {
@@ -44,5 +45,11 @@ public class Primergrado {
 
     public void setImageEst(int imageEst) {
         this.imageEst = imageEst;
+    }
+    public String getApellido1() {
+        return apellido1;
+    }
+    public void setApellido1(String apellido1) {
+        this.apellido1 = apellido1;
     }
 }
