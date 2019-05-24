@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:rotationX="0.0"
+    android:background="#ffffefb1"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25.0dip"
+                android:layout_marginTop="15.0dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvalumno"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="datos del alumno"
+                    android:textSize="24.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="109dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvnom"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="19dp"
+                            android:fontFamily="monospace"
+                            android:text="NOMBRE"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvap"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="43.0dip"
+                            android:text="APELLIDOS"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="50dp"
+                            android:text="EDAD"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="69dp"
+                            android:text="GRADO"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="52dp"
+                            android:text="MUNICIPIO"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="54dp"
+                            android:text="DIRECCION"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvnac"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="55dp"
+                            android:text="NACIMIENTO"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="251.0dip"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtNombre"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:layout_width="fill_parent"
+                            android:layout_height="44.0dip"
+                            android:layout_marginTop="10.0dip"
+                            android:width="0.0dip"
+                            android:background="@drawable/rnr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar nombreeee"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:rotationX="0.0"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtApellidos"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar apellidos"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtEdad"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingrese edad"
+                            android:inputType="number"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <Spinner
+                            android:id="@+id/spGrado"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="39.0dip"
+
+
+                            android:background="@drawable/rr" />
+
+                        <EditText
+                            android:id="@+id/txtMunicipio"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar municipio"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtDIreccion"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar dirección"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtFecha"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar fecha de nacimiento"
+                            android:inputType="textPersonName"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25.0dip"
+                android:layout_marginTop="25.0dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvtutor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:text="Datos del tutor"
+                    android:textSize="24.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="26dp"
+                            android:text="NOMBRE"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView144"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="54dp"
+                            android:text="APELLIDOS"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView100"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginTop="55dp"
+                            android:text="Num.Celular "
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="251.0dip"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/txtNombreT"
+                            style="@style/Widget.AppCompat.EditText"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar nombre"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtApellidosT"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Ingresar apellidos"
+                            android:inputType="textPersonName"
+                            android:maxLength="20"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+
+                        <EditText
+                            android:id="@+id/txtCElular"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20.0dip"
+                            android:background="@drawable/rr"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@android:color/holo_orange_light" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50.0dip"
+                    android:layout_marginTop="30.0dip"
+                    android:layout_marginRight="50.0dip"
+                    android:layout_marginBottom="30.0dip"
+                    android:text="Registrar" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+        </LinearLayout>
+
+
+
+
+
+
+
