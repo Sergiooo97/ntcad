@@ -21,28 +21,27 @@ import java.util.List;
 public class Consulta extends AppCompatActivity {
 
 
-    private  RecyclerView recycleviewalumnos1;
-    private  RecyclerVIewAdap1 adaptadoralumno1;
+    private RecyclerView recycleviewalumnos1;
+    private RecyclerVIewAdap1 adaptadoralumno1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anio_uno);
 
 
-
-       String selec = getIntent().getStringExtra("selec");
-
-
-       if(selec.equals("T")){
-           recycleviewalumnos1 = (RecyclerView) findViewById(R.id.Recycleruno);
-           recycleviewalumnos1.setLayoutManager(new LinearLayoutManager((this)));
-           adaptadoralumno1 = new RecyclerVIewAdap1(obtenerBD());
-           recycleviewalumnos1.setAdapter(adaptadoralumno1);
+        String selec = getIntent().getStringExtra("selec");
 
 
+        if (selec.equals("T")) {
+            recycleviewalumnos1 = (RecyclerView) findViewById(R.id.Recycleruno);
+            recycleviewalumnos1.setLayoutManager(new LinearLayoutManager((this)));
+            adaptadoralumno1 = new RecyclerVIewAdap1(obtenerBD());
+            recycleviewalumnos1.setAdapter(adaptadoralumno1);
 
-       }
-       /*
+
+        }
+
         if(selec.equals("1")){
             recycleviewalumnos1 = (RecyclerView) findViewById(R.id.Recycleruno);
             recycleviewalumnos1.setLayoutManager(new LinearLayoutManager((this)));
@@ -96,141 +95,147 @@ public class Consulta extends AppCompatActivity {
 
 
 
-        }*/
+        }
     }
-    public Connection conexionBD()
-    {
-        Connection conexion=null;
-        try{
+
+    public Connection conexionBD() {
+        Connection conexion = null;
+        try {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
         return conexion;
     }
-    public List<Primergrado> obtenerBD(){
+
+    public List<Primergrado> obtenerBD() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT ORDER BY Grado, Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"),rs.getString("Apellidos"),  R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT ORDER BY Grado, Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-/*
-    public List<Primergrado> obtenerBD2(){
+
+    public List<Primergrado> obtenerBD2() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '1 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '1 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-    public List<Primergrado> obtenerBD3(){
+
+    public List<Primergrado> obtenerBD3() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '2 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '2 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-    public List<Primergrado> obtenerBD4(){
+
+    public List<Primergrado> obtenerBD4() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '3 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '3 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-    public List<Primergrado> obtenerBD5(){
+
+    public List<Primergrado> obtenerBD5() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '4 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '4 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-    public List<Primergrado> obtenerBD6(){
+
+    public List<Primergrado> obtenerBD6() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '5 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '5 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
     }
-    public List<Primergrado> obtenerBD7(){
+
+    public List<Primergrado> obtenerBD7() {
         List<Primergrado> alumno = new ArrayList<>();
-        try{
-            Statement st=conexionBD().createStatement();
-            ResultSet rs=st.executeQuery("select * from natacadT WHERE Grado = '6 Grado' ORDER BY  Edad ASC");
-            while (rs.next()){
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"),rs.getString("Grado"), R.drawable.estudiante));
+        try {
+            Statement st = conexionBD().createStatement();
+            ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '6 Grado' ORDER BY  Edad ASC");
+            while (rs.next()) {
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
 
             }
 
-        }catch(SQLException e){
+        } catch (SQLException e) {
             Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
         }
         return alumno;
-    }*/
+    }
 }

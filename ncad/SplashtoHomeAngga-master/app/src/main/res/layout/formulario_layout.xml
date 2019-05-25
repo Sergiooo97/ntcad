@@ -2,7 +2,7 @@
 <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:rotationX="0.0"
-    android:background="#ffffefb1"
+    android:background="@drawable/libreta2"
     xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
@@ -121,7 +121,8 @@
                             android:layout_height="44.0dip"
                             android:layout_marginTop="10.0dip"
                             android:width="0.0dip"
-                            android:background="@drawable/rnr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar nombreeee"

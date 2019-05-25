@@ -113,6 +113,15 @@ public class MainActivity extends AppCompatActivity {
                             txtcon.animate().translationY(-1100).setDuration(700).setStartDelay(500);
                             txtiin.animate().translationY(-1100).setDuration(700).setStartDelay(500);*/
 
+                    btUser.setFocusable(false);
+                    btUser.setEnabled(false);
+                    btUser.setCursorVisible(false);
+                    btUser.setKeyListener(null);
+                    btPass.setFocusable(false);
+                    btPass.setEnabled(false);
+                    btPass.setCursorVisible(false);
+                    btPass.setKeyListener(null);
+
                     btnin.startAnimation(frombotton);
                     txtiin.startAnimation(frombotton);
                     btncon.startAnimation(frombotton);

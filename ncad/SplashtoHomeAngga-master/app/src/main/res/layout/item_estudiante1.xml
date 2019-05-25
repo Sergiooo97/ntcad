@@ -17,7 +17,8 @@
             app:cardBackgroundColor="@color/colorAccent"
             app:cardCornerRadius="40dp"
             app:cardElevation="8dp"
-            app:contentPaddingTop="05dp">
+            app:contentPaddingTop="05dp"
+           >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -26,10 +27,10 @@
 
                 <ImageView
                     android:id="@+id/imgEst1"
-                    android:layout_width="171dp"
+                    android:layout_width="186dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/estudiante" />
+                    app:srcCompat="@drawable/academia" />
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -47,7 +48,7 @@
                         android:gravity="right"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="Nombre"
+                        android:text="Nombre  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -60,7 +61,7 @@
                         android:gravity="right"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="grado"
+                        android:text="grado  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -71,7 +72,7 @@
                         android:layout_height="30dp"
                         android:layout_marginTop="15dp"
                         android:gravity="right"
-                        android:text="edad"
+                        android:text="edad  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -89,7 +90,7 @@
                         android:id="@+id/txtNombre1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="TextView"
@@ -101,7 +102,7 @@
                         android:id="@+id/txtEdad1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="TextView"
@@ -113,7 +114,7 @@
                         android:id="@+id/txtGrado1"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="TextView"
                         android:textColor="@android:color/holo_orange_light"
                         android:textSize="18sp"
@@ -136,7 +137,7 @@
                         android:gravity="right"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="Apellidos"
+                        android:text="Apellidos  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -149,7 +150,7 @@
                         android:gravity="right"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:text="Municipio"
+                        android:text="Municipio  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -160,7 +161,7 @@
                         android:layout_height="30dp"
                         android:layout_marginTop="15dp"
                         android:gravity="right"
-                        android:text="Num. Tutor"
+                        android:text="Num. Tutor  "
                         android:textColor="@android:color/white"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -178,7 +179,7 @@
                         android:id="@+id/txtApellido1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="TextView"
@@ -190,7 +191,7 @@
                         android:id="@+id/txtMunicipio1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="TextView"
@@ -199,10 +200,10 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtF"
+                        android:id="@+id/txtnumtutor"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:gravity="center"
+                        android:gravity="left"
                         android:text="TextView"
                         android:textColor="@android:color/holo_orange_light"
                         android:textSize="18sp"
