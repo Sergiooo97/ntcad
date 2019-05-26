@@ -13,7 +13,7 @@ import java.util.List;
 public class RecyclerVIewAdap1 extends RecyclerView.Adapter<RecyclerVIewAdap1.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombre1, edad1, grado1, apellido1, municipio1, numtutor1;
+        private TextView nombre1, edad1, grado1, apellido1, municipio1, numtutor1, id1;
         ImageView imageEest;
 
         public ViewHolder(@NonNull View itemView) {
@@ -25,6 +25,8 @@ public class RecyclerVIewAdap1 extends RecyclerView.Adapter<RecyclerVIewAdap1.Vi
             apellido1 = (TextView) itemView.findViewById(R.id.txtApellido1);
             municipio1 = (TextView) itemView.findViewById(R.id.txtMunicipio1);
             numtutor1 = (TextView) itemView.findViewById(R.id.txtnumtutor);
+            id1 = (TextView) itemView.findViewById(R.id.tvid1);
+
 
 
 
@@ -54,6 +56,8 @@ public class RecyclerVIewAdap1 extends RecyclerView.Adapter<RecyclerVIewAdap1.Vi
         holder.apellido1.setText(alumnosLIsta1.get(position).getApellido1());
         holder.municipio1.setText(alumnosLIsta1.get(position).getMunicipio1());
         holder.numtutor1.setText(alumnosLIsta1.get(position).getNumtutor1());
+        holder.id1.setText(alumnosLIsta1.get(position).getId1());
+
 
 
 

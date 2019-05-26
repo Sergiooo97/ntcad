@@ -1,16 +1,14 @@
 package com.example.anggarisky.splashtohomeangga;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.os.StrictMode.ThreadPolicy.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,6 +28,7 @@ public class Formulario_class extends AppCompatActivity {
     EditText edtmunicipio;
     EditText edtnombre;
     Spinner spgrad;
+    TextView tvcont;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +46,7 @@ public class Formulario_class extends AppCompatActivity {
         this.butonagregar = (Button) findViewById(R.id.btnIncribir);
         this.edtfechaa = (EditText) findViewById(R.id.txtFecha);
         this.edtdir = (EditText) findViewById(R.id.txtDIreccion);
+
         butonagregar = (Button) findViewById(R.id.btnRegistrar);
 
         String [] opciones = {"Seleccione un grado", "1°", "2°", "3°", "4°", "5°", "6°"};
@@ -83,6 +83,9 @@ public class Formulario_class extends AppCompatActivity {
         }
         return conexion;
     }
+
+
+
 
     public void agregarusuario() {
         try {

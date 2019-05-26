@@ -30,6 +30,7 @@ public class Consulta extends AppCompatActivity {
         setContentView(R.layout.anio_uno);
 
 
+
         String selec = getIntent().getStringExtra("selec");
 
 
@@ -112,6 +113,21 @@ public class Consulta extends AppCompatActivity {
         }
         return conexion;
     }
+    public Connection conexionBD2() {
+        Connection conexion = null;
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "no hay conexion", Toast.LENGTH_SHORT).show();
+            finish();
+
+        }
+        return conexion;
+    }
 
     public List<Primergrado> obtenerBD() {
         List<Primergrado> alumno = new ArrayList<>();
@@ -119,7 +135,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT ORDER BY Grado, Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"),rs.getString("Id"),  R.drawable.estudiante));
 
             }
 
@@ -137,7 +153,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '1 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"),rs.getString("Id"), R.drawable.estudiante));
 
             }
 
@@ -155,7 +171,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '2 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"),rs.getString("Id"), R.drawable.estudiante));
 
             }
 
@@ -173,7 +189,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '3 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), rs.getString("Id"), R.drawable.estudiante));
 
             }
 
@@ -191,7 +207,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '4 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), rs.getString("Id"), R.drawable.estudiante));
 
             }
 
@@ -209,7 +225,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '5 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), rs.getString("Id"), R.drawable.estudiante));
 
             }
 
@@ -227,7 +243,7 @@ public class Consulta extends AppCompatActivity {
             Statement st = conexionBD().createStatement();
             ResultSet rs = st.executeQuery("select * from natacadT WHERE Grado = '6 Grado' ORDER BY  Edad ASC");
             while (rs.next()) {
-                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), R.drawable.estudiante));
+                alumno.add(new Primergrado(rs.getString("Nombre"), rs.getString("Edad"), rs.getString("Grado"), rs.getString("Apellidos"), rs.getString("Municipio"), rs.getString("Celular_Tutor"), rs.getString("Id"), R.drawable.estudiante));
 
             }
 

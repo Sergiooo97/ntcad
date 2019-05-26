@@ -39,7 +39,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="109dp"
+                        android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
@@ -66,7 +66,7 @@
                             android:id="@+id/textView13"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="50dp"
+                            android:layout_marginTop="38dp"
                             android:text="EDAD"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -75,7 +75,7 @@
                             android:id="@+id/textView12"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="69dp"
+                            android:layout_marginTop="60dp"
                             android:text="GRADO"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -84,7 +84,7 @@
                             android:id="@+id/textView11"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="52dp"
+                            android:layout_marginTop="40dp"
                             android:text="MUNICIPIO"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -93,7 +93,7 @@
                             android:id="@+id/textView9"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="54dp"
+                            android:layout_marginTop="40dp"
                             android:text="DIRECCION"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -102,7 +102,7 @@
                             android:id="@+id/tvnac"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="55dp"
+                            android:layout_marginTop="40dp"
                             android:text="NACIMIENTO"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -117,7 +117,7 @@
                         <EditText
                             android:id="@+id/txtNombre"
                             style="@style/Widget.AppCompat.EditText"
-                            android:layout_width="fill_parent"
+                            android:layout_width="229dp"
                             android:layout_height="44.0dip"
                             android:layout_marginTop="10.0dip"
                             android:width="0.0dip"
@@ -134,11 +134,11 @@
 
                         <EditText
                             android:id="@+id/txtApellidos"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44.0dip"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
-
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar apellidos"
@@ -149,11 +149,11 @@
 
                         <EditText
                             android:id="@+id/txtEdad"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44.0dip"
                             android:layout_marginTop="20.0dip"
-
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingrese edad"
@@ -163,19 +163,21 @@
 
                         <Spinner
                             android:id="@+id/spGrado"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44.0dip"
                             android:layout_marginTop="39.0dip"
-
-
-                            android:background="@drawable/rr" />
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
+                            android:popupBackground="@drawable/rouded"
+                            android:popupElevation="20dp"/>
 
                         <EditText
                             android:id="@+id/txtMunicipio"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44.0dip"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar municipio"
@@ -186,10 +188,11 @@
 
                         <EditText
                             android:id="@+id/txtDIreccion"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44.0dip"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar dirección"
@@ -200,10 +203,11 @@
 
                         <EditText
                             android:id="@+id/txtFecha"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44dp"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar fecha de nacimiento"
@@ -239,7 +243,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="124dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
@@ -248,7 +252,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
 
-                            android:layout_marginTop="26dp"
+                            android:layout_marginTop="18dp"
                             android:text="NOMBRE"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -257,7 +261,7 @@
                             android:id="@+id/textView144"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="54dp"
+                            android:layout_marginTop="40dp"
                             android:text="APELLIDOS"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -266,7 +270,7 @@
                             android:id="@+id/textView100"
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:layout_marginTop="55dp"
+                            android:layout_marginTop="42dp"
                             android:text="Num.Celular "
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -281,10 +285,11 @@
                         <EditText
                             android:id="@+id/txtNombreT"
                             style="@style/Widget.AppCompat.EditText"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44dp"
                             android:layout_marginTop="10.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar nombre"
@@ -295,10 +300,11 @@
 
                         <EditText
                             android:id="@+id/txtApellidosT"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44dp"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:hint="Ingresar apellidos"
@@ -309,10 +315,11 @@
 
                         <EditText
                             android:id="@+id/txtCElular"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="229dp"
+                            android:layout_height="44dp"
                             android:layout_marginTop="20.0dip"
-                            android:background="@drawable/rr"
+                            android:background="@drawable/bginput2"
+                            android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
                             android:inputType="number"
@@ -336,7 +343,8 @@
                     android:layout_marginTop="30.0dip"
                     android:layout_marginRight="50.0dip"
                     android:layout_marginBottom="30.0dip"
-                    android:text="Registrar" />
+                    android:text="Registrar"
+                    android:background="@drawable/rouded"/>
 
             </LinearLayout>
         </LinearLayout>

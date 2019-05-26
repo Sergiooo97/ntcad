@@ -154,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
         btncon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,60 +188,159 @@ public class MainActivity extends AppCompatActivity {
         String seleccion = this.spm.getSelectedItem().toString();
 
         if (seleccion.equals("todos")) {
-            tvv2.setText("T");
-            Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
-            nuevoform.putExtra("selec", tvv2.getText().toString());
-            startActivity(nuevoform);
-
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+            conexionBDTODOS();
         }
         if (seleccion.equals("1ª")) {
+            conexionBD01();
+        }
+        if (seleccion.equals("2ª")) {
+            conexionBD02();
+        }
+        if (seleccion.equals("3ª")) {
+            conexionBD03();
+        }
+        if (seleccion.equals("4ª")) {
+            conexionBD04();
+        }
+        if (seleccion.equals("5ª")) {
+            conexionBD05();
+        }
+        if (seleccion.equals("6ª")) {
+            conexionBD06();
+        }
+    }
+    public Connection conexionBD01() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("1");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
-        if (seleccion.equals("2ª")) {
+        return conexion;
+    }
+    public Connection conexionBD02() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("2");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
-        if (seleccion.equals("3ª")) {
+        return conexion;
+    }
+    public Connection conexionBD03() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("3");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
-        if (seleccion.equals("4ª")) {
+        return conexion;
+    }
+    public Connection conexionBD04() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("4");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
-        if (seleccion.equals("5ª")) {
+        return conexion;
+    }
+    public Connection conexionBD05() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("5");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
-        if (seleccion.equals("6ª")) {
+        return conexion;
+    }
+    public Connection conexionBD06() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
             tvv2.setText("6");
             Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
         }
+        return conexion;
+    }
+    public Connection conexionBDTODOS() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
+            tvv2.setText("T");
+            Intent nuevoform =new Intent(MainActivity.this,  Consulta.class);
+            nuevoform.putExtra("selec", tvv2.getText().toString());
+            startActivity(nuevoform);
+
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
+        }
+        return conexion;
     }
 }
