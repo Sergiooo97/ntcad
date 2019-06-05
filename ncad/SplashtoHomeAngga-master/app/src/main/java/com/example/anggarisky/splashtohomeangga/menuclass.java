@@ -6,12 +6,10 @@ import android.os.StrictMode;
 import android.os.StrictMode.ThreadPolicy.Builder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -36,7 +34,7 @@ public class menuclass extends AppCompatActivity {
         this.frombotton = AnimationUtils.loadAnimation(this, R.anim.frombottom);
        this.btnin = (Button) findViewById(R.id.btnIncribir);
         this.btncon = (Button) findViewById(R.id.btnConsultar);
-        this.btnca = (Button) findViewById(R.id.btncal);
+        this.btnca = (Button) findViewById(R.id.btnDIn);
         this.txtca = (TextView) findViewById(R.id.txtcall);
         this.txtcon = (TextView) findViewById(R.id.txtIns2);
         this.txtiin = (TextView) findViewById(R.id.txtins);

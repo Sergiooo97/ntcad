@@ -125,7 +125,7 @@
                             android:elevation="8dp"
                             android:ems="10"
                             android:gravity="center"
-                            android:hint="Ingresar nombreeee"
+                            android:hint="Ingresar nombre"
                             android:inputType="textPersonName"
                             android:maxLength="20"
                             android:rotationX="0.0"

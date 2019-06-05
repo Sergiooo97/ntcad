@@ -90,13 +90,13 @@ public class Formulario_class extends AppCompatActivity {
     public void agregarusuario() {
         try {
 
-            PreparedStatement pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?)");
+            PreparedStatement pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?)");
 
             //PreparedStatement pst;
             String seleccion = this.spgrad.getSelectedItem().toString();
 
             if (seleccion.equals("1°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString()+ " Años");
@@ -107,13 +107,19 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
+
+
+
+
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("2°")) {
-              pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+              pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString() + " Años");
@@ -124,12 +130,14 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
 
             }
             if (seleccion.equals("3°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString() + " Años");
@@ -140,13 +148,15 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("4°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString() + " Años");
@@ -157,13 +167,15 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("5°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString()+ " Años");
@@ -174,13 +186,15 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("6°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?)");
+                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
                 pst.setString(1, this.edtnombre.getText().toString());
                 pst.setString(2, this.edtApellidos.getText().toString());
                 pst.setString(3, this.edtedad.getText().toString() + " Años");
@@ -191,6 +205,8 @@ public class Formulario_class extends AppCompatActivity {
                 pst.setString(8, this.edtTutor.getText().toString());
                 pst.setString(9, this.edtapellidosT.getText().toString());
                 pst.setString(10, this.edtcelular.getText().toString());
+                pst.setString(11, "234");
+                pst.setString(12, "1500");
                 pst.executeUpdate();
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }

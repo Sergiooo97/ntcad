@@ -1,7 +1,6 @@
 package com.example.anggarisky.splashtohomeangga;
 
 import android.content.Intent;
-import android.icu.lang.UCharacterEnums;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textbien, txtca, txtcon, txtiin, tvv2;
     LinearLayout textsplash, texthome, menus;
     Animation frombottom;
-    Button btnin, btncon, btnca;
+    Button btnin, btncon, btnca, btndin;
     Spinner spm;
 
 
@@ -56,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
         menus = (LinearLayout) findViewById(R.id.Menuu);
         this.btnin = (Button) findViewById(R.id.btnIncribir);
         this.btncon = (Button) findViewById(R.id.btnConsultar);
-        this.btnca = (Button) findViewById(R.id.btncal);
+        this.btnca = (Button) findViewById(R.id.btnDIn);
         this.txtca = (TextView) findViewById(R.id.txtcall);
         this.txtcon = (TextView) findViewById(R.id.txtIns2);
         this.txtiin = (TextView) findViewById(R.id.txtins);
         this.btnin = (Button) findViewById(R.id.btnIncribir);
         this.btncon = (Button) findViewById(R.id.btnConsultar);
+        this.btndin = (Button) findViewById(R.id.btnDIn);
+
 
         spm.setVisibility(View.INVISIBLE);
         btnin.setVisibility(View.INVISIBLE);
@@ -76,6 +77,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        Button bootonDin = (Button)findViewById(R.id.btnDIn);
+        bootonDin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nuevoform =new Intent(MainActivity.this,  dinero_class.class);
+                startActivity(nuevoform);
+
+            }
+        });
+
 
         Button Boton = (Button)findViewById(R.id.btnAccedeer);
         Boton.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 String Usuario = ((EditText) findViewById(R.id.txtUser)).getText().toString();
                 String Contraseña = ((EditText) findViewById(R.id.txtPassword)).getText().toString();
 
-                if (Usuario.equals("a") && Contraseña.equals("a")) {
+                if (Usuario.equals("a") && Contraseña.equals("b")) {
                     conexionBD();
 
                     Animation frombotton;
@@ -175,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             StrictMode.setThreadPolicy(new Builder().permitAll().build());
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78 ;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
@@ -214,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             StrictMode.setThreadPolicy(new Builder().permitAll().build());
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78 ;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
 
             tvv2.setText("1");

@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.663" />
 
     <Button
-        android:id="@+id/btncal"
+        android:id="@+id/btnDIn"
         android:layout_width="96.0dip"
         android:layout_height="93.0dip"
         android:layout_marginStart="8.0dip"
