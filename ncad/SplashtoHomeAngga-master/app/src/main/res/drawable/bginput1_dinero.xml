@@ -3,11 +3,11 @@
 
 
     <solid
-        android:color="#c3501a"
+        android:color="#e66c33"
         />
 
     <corners
-        android:radius="200dp"
+        android:radius="16dp"
         />
 
 

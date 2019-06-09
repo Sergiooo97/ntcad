@@ -47,6 +47,13 @@ public class Formulario_class extends AppCompatActivity {
         this.edtfechaa = (EditText) findViewById(R.id.txtFecha);
         this.edtdir = (EditText) findViewById(R.id.txtDIreccion);
 
+
+
+
+
+
+
+
         butonagregar = (Button) findViewById(R.id.btnRegistrar);
 
         String [] opciones = {"Seleccione un grado", "1°", "2°", "3°", "4°", "5°", "6°"};
@@ -91,139 +98,408 @@ public class Formulario_class extends AppCompatActivity {
         try {
 
             PreparedStatement pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?)");
-
-            //PreparedStatement pst;
             String seleccion = this.spgrad.getSelectedItem().toString();
 
             if (seleccion.equals("1°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString()+ " Años");
-                pst.setString(4, "1 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
+
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")){
+                    edtdir.setError("este campo no puede quedar vacio");
+
+                }
+               if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                       && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                       && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()) {
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "1 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
 
 
+                    pst.executeUpdate();
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
 
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+                }
 
-                pst.executeUpdate();
-                //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("2°")) {
-              pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString() + " Años");
-                pst.setString(4, "2 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
-                pst.executeUpdate();
-                //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")){
+                    edtdir.setError("este campo no puede quedar vacio");
+                }
+                if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                        && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                        && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()) {
+
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "2 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
+                    pst.executeUpdate();
+
+
+
+
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
+
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+                }
 
             }
+
+
+            //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+
+
             if (seleccion.equals("3°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString() + " Años");
-                pst.setString(4, "3 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
-                pst.executeUpdate();
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")){
+                    edtdir.setError("este campo no puede quedar vacio");
+                }
+                if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                        && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                        && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()) {
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "3 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
+                    pst.executeUpdate();
+
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
+
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+
+
+                }
                 //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
             }
 
 
             if (seleccion.equals("4°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString() + " Años");
-                pst.setString(4, "4 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
-                pst.executeUpdate();
-                //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")){
+                    edtdir.setError("este campo no puede quedar vacio");
+                }
+                if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()  ) {
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "4 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
+                    pst.executeUpdate();
+
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
+
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+
+                }
             }
 
 
             if (seleccion.equals("5°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString()+ " Años");
-                pst.setString(4, "5 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
-                pst.executeUpdate();
-                //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")){
+                    edtdir.setError("este campo no puede quedar vacio");
+                }
+                if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                        && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                        && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()) {
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "5 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
+                    pst.executeUpdate();
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
+
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+                }
             }
 
 
             if (seleccion.equals("6°")) {
-                pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
-                pst.setString(1, this.edtnombre.getText().toString());
-                pst.setString(2, this.edtApellidos.getText().toString());
-                pst.setString(3, this.edtedad.getText().toString() + " Años");
-                pst.setString(4, "6 Grado");
-                pst.setString(5, this.edtfechaa.getText().toString());
-                pst.setString(6, this.edtmunicipio.getText().toString());
-                pst.setString(7, this.edtdir.getText().toString());
-                pst.setString(8, this.edtTutor.getText().toString());
-                pst.setString(9, this.edtapellidosT.getText().toString());
-                pst.setString(10, this.edtcelular.getText().toString());
-                pst.setString(11, "234");
-                pst.setString(12, "1500");
-                pst.executeUpdate();
-                //Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
-            }
+                if (edtnombre.getText().toString().trim().equalsIgnoreCase("")){
+                    edtnombre.setError("este campo no puede quedar vacio");
+                }
+                if (edtApellidos.getText().toString().trim().equalsIgnoreCase("")){
+                    edtApellidos.setError("este campo no puede quedar vacio");
+                }
+                if (edtapellidosT.getText().toString().trim().equalsIgnoreCase("")){
+                    edtapellidosT.setError("este campo no puede quedar vacio");
+                }
+                if (edtedad.getText().toString().trim().equalsIgnoreCase("")){
+                    edtedad.setError("este campo no puede quedar vacio");
+                }
+                if (edtmunicipio.getText().toString().trim().equalsIgnoreCase("")){
+                    edtmunicipio.setError("este campo no puede quedar vacio");
+                }
+                if (edtTutor.getText().toString().trim().equalsIgnoreCase("")){
+                    edtTutor.setError("este campo no puede quedar vacio");
+                }
+                if (edtcelular.getText().toString().trim().equalsIgnoreCase("")){
+                    edtcelular.setError("este campo no puede quedar vacio");
+                }
+                if (edtfechaa.getText().toString().trim().equalsIgnoreCase("")){
+                    edtfechaa.setError("este campo no puede quedar vacio");
+                }
+                if (edtdir.getText().toString().trim().equalsIgnoreCase("")) {
+                    edtdir.setError("este campo no puede quedar vacio");
+                }
+
+                if(!edtnombre.getText().toString().isEmpty() && !edtApellidos.getText().toString().isEmpty() && !edtedad.getText().toString().isEmpty()
+                        && !edtfechaa.getText().toString().isEmpty() && !edtmunicipio.getText().toString().isEmpty() && !edtdir.getText().toString().isEmpty()
+                        && !edtTutor.getText().toString().isEmpty()&& !edtapellidosT.getText().toString().isEmpty() && !edtcelular.getText().toString().isEmpty()) {
+
+                    pst = conexionBD().prepareStatement("insert into natacadT values (?,?,?,?,?,?,?,?,?,?,?,?)");
+                    pst.setString(1, this.edtnombre.getText().toString());
+                    pst.setString(2, this.edtApellidos.getText().toString());
+                    pst.setString(3, this.edtedad.getText().toString() + " Años");
+                    pst.setString(4, "6 Grado");
+                    pst.setString(5, this.edtfechaa.getText().toString());
+                    pst.setString(6, this.edtmunicipio.getText().toString());
+                    pst.setString(7, this.edtdir.getText().toString());
+                    pst.setString(8, this.edtTutor.getText().toString());
+                    pst.setString(9, this.edtapellidosT.getText().toString());
+                    pst.setString(10, this.edtcelular.getText().toString());
+                    pst.setString(11, "234");
+                    pst.setString(12, "1500");
+                    pst.executeUpdate();
+
+                    Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
+                    this.edtnombre.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtApellidos.setText("");
+                    this.edtfechaa.setText("");
+                    this.edtcelular.setText("");
+                    this.edtdir.setText("");
+                    this.edtTutor.setText("");
+                    this.edtmunicipio.setText("");
+
+                    this.edtedad.setText("");
+                    this.edtapellidosT.setText("");
+                }
+
+                }
 
 
-            this.edtnombre.setText("");
-            this.edtfechaa.setText("");
-            this.edtApellidos.setText("");
-            this.edtfechaa.setText("");
-            this.edtcelular.setText("");
-            this.edtdir.setText("");
-            this.edtTutor.setText("");
-            this.edtmunicipio.setText("");
 
-            this.edtedad.setText("");
-            this.edtapellidosT.setText("");
-            Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_LONG).show();
+
 
 
         } catch (SQLException e) {

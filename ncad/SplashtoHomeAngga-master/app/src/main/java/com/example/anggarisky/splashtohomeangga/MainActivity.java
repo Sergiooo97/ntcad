@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         bootonDin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nuevoform =new Intent(MainActivity.this,  dinero_class.class);
-                startActivity(nuevoform);
+                conexionDInero();
+
 
             }
         });
@@ -117,12 +117,6 @@ public class MainActivity extends AppCompatActivity {
                     btUser.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
                     botonacceder.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
                     btPass.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
-                           /* btnin.animate().translationY(-1100).setDuration(600).setStartDelay(500);
-                            btncon.animate().translationY(-1100).setDuration(700).setStartDelay(500);
-                            btnca.animate().translationY(-1100).setDuration(700).setStartDelay(500);
-                            txtca.animate().translationY(-1100).setDuration(700).setStartDelay(500);
-                            txtcon.animate().translationY(-1100).setDuration(700).setStartDelay(500);
-                            txtiin.animate().translationY(-1100).setDuration(700).setStartDelay(500);*/
 
                     btUser.setFocusable(false);
                     btUser.setEnabled(false);
@@ -188,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78 ;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
+
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
         }
@@ -225,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             StrictMode.setThreadPolicy(new Builder().permitAll().build());
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78 ;databaseName=natacad;user=SA;password=4973160vvVV");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
 
             tvv2.setText("1");
@@ -347,11 +343,30 @@ public class MainActivity extends AppCompatActivity {
             nuevoform.putExtra("selec", tvv2.getText().toString());
             startActivity(nuevoform);
 
-
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
 
         }
         return conexion;
+
     }
+    public Connection conexionDInero() {
+        Connection conexion = null;
+        try {
+            StrictMode.setThreadPolicy(new Builder().permitAll().build());
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+            Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
+            Intent nuevoform = new Intent(MainActivity.this, dinero_class.class);
+            startActivity(nuevoform);
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No hay conexion", Toast.LENGTH_SHORT).show();
+
+        }
+        return conexion;
+
+    }
+
 }

@@ -1,6 +1,8 @@
 package com.example.anggarisky.splashtohomeangga;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,8 +30,6 @@ public class Consulta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anio_uno);
-
-
 
         String selec = getIntent().getStringExtra("selec");
 
@@ -253,5 +253,28 @@ public class Consulta extends AppCompatActivity {
 
         }
         return alumno;
+    }
+
+    private void ejecutar1(){
+        final Handler handler= new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                onRestart();//llamamos nuestro metodo
+                handler.postDelayed(this,900);//se ejecutara cada 10 segundos
+            }
+        },5);//empezara a ejecutarse después de 5 milisegundos
+    }
+
+
+    @Override
+    protected void onRestart() {
+
+        // TODO Auto-generated method stub
+        super.onRestart();
+        Intent i = new Intent(Consulta.this, Consulta.class);  //your class
+        startActivity(i);
+        finish();
+
     }
 }
