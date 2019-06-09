@@ -1,13 +1,19 @@
 package com.example.anggarisky.splashtohomeangga;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Consulta extends AppCompatActivity {
+    FloatingActionButton floatbutton, floatbutton2;
 
 
     private RecyclerView recycleviewalumnos1;
@@ -30,6 +37,24 @@ public class Consulta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anio_uno);
+        floatbutton = (FloatingActionButton)findViewById(R.id.btnfloat);
+        floatbutton2 = (FloatingActionButton)findViewById(R.id.btnfloat2);
+        floatbutton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nuevoform =new Intent(Consulta.this,  Formulario_class.class);
+                startActivity(nuevoform);
+            }
+        });
+
+
+        floatbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
+                Toast.makeText(getApplicationContext(), "Los datos se actualizaron", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         String selec = getIntent().getStringExtra("selec");
 
@@ -98,6 +123,12 @@ public class Consulta extends AppCompatActivity {
 
         }
     }
+    @Override
+    protected void onStop() {
+        super.onStop();  // Always call the superclass method first
+
+    }
+
 
     public Connection conexionBD() {
         Connection conexion = null;
@@ -277,4 +308,6 @@ public class Consulta extends AppCompatActivity {
         finish();
 
     }
+
+
 }

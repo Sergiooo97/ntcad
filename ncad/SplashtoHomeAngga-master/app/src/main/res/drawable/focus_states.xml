@@ -9,6 +9,7 @@
     <item
         android:state_focused="true"
         android:drawable="@drawable/bginput4"
+
         /> <!-- focused -->
     <item
         android:drawable="@drawable/bginput2"

@@ -54,7 +54,7 @@ public class dinero_class extends AppCompatActivity {
             conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
 
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "No hay conexion", Toast.LENGTH_SHORT).show();
         }
         return conexion;
     }
@@ -100,7 +100,7 @@ public class dinero_class extends AppCompatActivity {
             @Override
             public void run() {
                 metodoEjecutar();//llamamos nuestro metodo
-                handler.postDelayed(this,100);//se ejecutara cada 10 segundos
+                handler.postDelayed(this,50);//se ejecutara cada 10 segundos
             }
         },5);//empezara a ejecutarse después de 5 milisegundos
     }
@@ -117,12 +117,10 @@ public class dinero_class extends AppCompatActivity {
             }
 
         } catch (SQLException e) {
-            Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "No hay conexion", Toast.LENGTH_SHORT).show();
 
         }
-
-
-
+        return;
 
     }
 }

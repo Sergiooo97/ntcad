@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".dinero_class">
         </activity>
+        <activity android:name=".acerca">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

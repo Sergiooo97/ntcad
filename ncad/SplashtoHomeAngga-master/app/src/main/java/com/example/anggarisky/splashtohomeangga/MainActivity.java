@@ -1,6 +1,8 @@
 package com.example.anggarisky.splashtohomeangga;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
     TextView textbien, txtca, txtcon, txtiin, tvv2;
     LinearLayout textsplash, texthome, menus;
     Animation frombottom;
-    Button btnin, btncon, btnca, btndin;
+    Button btnin, btncon, btnca, btndin, bacerca;
     Spinner spm;
+    MediaPlayer mp;
+
 
 
     @Override
@@ -62,6 +66,20 @@ public class MainActivity extends AppCompatActivity {
         this.btnin = (Button) findViewById(R.id.btnIncribir);
         this.btncon = (Button) findViewById(R.id.btnConsultar);
         this.btndin = (Button) findViewById(R.id.btnDIn);
+        this.bacerca = (Button) findViewById(R.id.btnAbout);
+
+        bacerca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent form = new Intent(MainActivity.this, acerca.class);
+                startActivity(form);
+
+            }
+        });
+
+        mp = (MediaPlayer.create(this, R.raw.pop));
+
 
 
         spm.setVisibility(View.INVISIBLE);
@@ -82,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 conexionDInero();
+                mp.start();
+
 
 
             }
@@ -94,10 +114,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String Usuario = ((EditText) findViewById(R.id.txtUser)).getText().toString();
                 String Contraseña = ((EditText) findViewById(R.id.txtPassword)).getText().toString();
+                mp.start();
 
                 if (Usuario.equals("a") && Contraseña.equals("b")) {
-                    conexionBD();
-
+conexionBD();
                     Animation frombotton;
                     frombotton = AnimationUtils.loadAnimation(MainActivity.this, R.anim.frombottom);
                     spm.setVisibility(View.VISIBLE);
@@ -156,6 +176,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent nuevoform =new Intent(MainActivity.this,  Formulario_class.class);
                 startActivity(nuevoform);
+                mp.start();
+
             }
         });
 
@@ -165,7 +187,10 @@ public class MainActivity extends AppCompatActivity {
         btncon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Consult();
+                mp.start();
+
 
             }
         });
@@ -180,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             StrictMode.setThreadPolicy(new Builder().permitAll().build());
             Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78 ;databaseName=natacad;user=SA;password=4973160vvVV");
+            conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
             Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
 
 

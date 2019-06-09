@@ -1,7 +1,11 @@
 package com.example.anggarisky.splashtohomeangga;
 
+import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -29,6 +33,9 @@ public class Formulario_class extends AppCompatActivity {
     EditText edtnombre;
     Spinner spgrad;
     TextView tvcont;
+    FloatingActionButton floatb;
+    MediaPlayer mp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,31 @@ public class Formulario_class extends AppCompatActivity {
         this.butonagregar = (Button) findViewById(R.id.btnIncribir);
         this.edtfechaa = (EditText) findViewById(R.id.txtFecha);
         this.edtdir = (EditText) findViewById(R.id.txtDIreccion);
+        this.floatb = (FloatingActionButton)findViewById(R.id.btnbu);
+        mp = (MediaPlayer.create(this, R.raw.aplausos));
+
+        floatb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Connection conexion = null;
+                try {
+                    StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitAll().build());
+                    Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+                    conexion = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.1.78;databaseName=natacad;user=SA;password=4973160vvVV");
+                    Toast.makeText(getApplicationContext(), "conectado", Toast.LENGTH_SHORT).show();
+
+                    Intent nuevoform =new Intent(Formulario_class.this,  Consulta.class);
+                    nuevoform.putExtra("selec","T");
+                    startActivity(nuevoform);
+
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "No hay conexion",Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            }
+        });
 
 
 
@@ -69,10 +101,18 @@ public class Formulario_class extends AppCompatActivity {
 
                 agregarusuario();
 
+
+
             }
 
 
         });
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();  // Always call the superclass method first
+
+        mp.stop();
     }
 
 
@@ -156,6 +196,7 @@ public class Formulario_class extends AppCompatActivity {
 
 
                     pst.executeUpdate();
+                   mp.start();
                     Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
                     this.edtnombre.setText("");
                     this.edtfechaa.setText("");
@@ -220,6 +261,7 @@ public class Formulario_class extends AppCompatActivity {
                     pst.setString(11, "234");
                     pst.setString(12, "1500");
                     pst.executeUpdate();
+                    mp.start();
 
 
 
@@ -289,6 +331,7 @@ public class Formulario_class extends AppCompatActivity {
                     pst.setString(11, "234");
                     pst.setString(12, "1500");
                     pst.executeUpdate();
+                    mp.start();
 
                     Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
                     this.edtnombre.setText("");
@@ -354,6 +397,7 @@ public class Formulario_class extends AppCompatActivity {
                     pst.setString(11, "234");
                     pst.setString(12, "1500");
                     pst.executeUpdate();
+                    mp.start();
 
                     Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
                     this.edtnombre.setText("");
@@ -417,6 +461,8 @@ public class Formulario_class extends AppCompatActivity {
                     pst.setString(11, "234");
                     pst.setString(12, "1500");
                     pst.executeUpdate();
+                    mp.start();
+
                     Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
                     this.edtnombre.setText("");
                     this.edtfechaa.setText("");
@@ -480,6 +526,7 @@ public class Formulario_class extends AppCompatActivity {
                     pst.setString(11, "234");
                     pst.setString(12, "1500");
                     pst.executeUpdate();
+                    mp.start();
 
                     Toast.makeText(getApplicationContext(), "Registro agregado ", Toast.LENGTH_SHORT).show();
                     this.edtnombre.setText("");
