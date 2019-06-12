@@ -127,12 +127,15 @@ conexionBD();
 
                             /*Intent nuevoform =new Intent(MainActivity.this,  menuclass.class);
                             startActivity(nuevoform);*/
+
+
                     bgapp.animate().translationY(-1575.0f).setDuration(700).setStartDelay(1000);
                     sol.animate().translationY(-350.0f).setDuration(400).setStartDelay(1000);
                     corazon.animate().translationY(-350.0f).setDuration(500).setStartDelay(1000);
                     nombre.animate().translationY(-350.0f).setDuration(600).setStartDelay(1000);
                     textbien.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
                     bienv.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
+
 
                     btUser.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
                     botonacceder.animate().translationY(300.0f).alpha(0.0f).setDuration(600).setStartDelay(1000);
